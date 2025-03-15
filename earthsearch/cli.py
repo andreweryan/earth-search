@@ -35,9 +35,9 @@ def main():
     search_parser.add_argument("--model_type", type=str, required=True, default="dinov2_vits14_reg", help="Type of model to use")
     search_parser.add_argument("--device", type=str, required=False, default="cuda", help="Device to use for feature extraction (cuda, mps, cpu)")
 
-    chip_parser.set_defaults(func=chip.main)
-    index_parser.set_defaults(func=index.main)
-    search_parser.set_defaults(func=search.main)
+    chip_parser.set_defaults(func=chip.chip)
+    index_parser.set_defaults(func=index.index)
+    search_parser.set_defaults(func=search.search)
 
     args = parser.parse_args()
 

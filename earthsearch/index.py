@@ -3,7 +3,7 @@ import torch
 from typing import Literal, List
 from .core import ImageSimilaritySearch
 
-def main(
+def index(
         image_dir: str,
         index_path: str,
         indexed_images_path: str,
@@ -49,4 +49,4 @@ def main(
     return None
 
 if __name__ == "__main__":
-    main()
+    index()

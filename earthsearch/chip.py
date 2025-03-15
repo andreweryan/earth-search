@@ -101,7 +101,7 @@ def pixel2longlat(
 
     return (x, y)
 
-def chip(
+def chip_image(
         image_path: str,
         chip_dir: str,
         window_size: int = 512,
@@ -150,7 +150,7 @@ def chip(
     
     return None
 
-def main(
+def chip(
         image_dir: str,
         chip_dir: str,
         window_size: int = 512,
@@ -190,7 +190,7 @@ def main(
             with ProcessPoolExecutor(max_workers=None) as executor:
                         futures = {
                             executor.submit(
-                                chip,
+                                chip_image,
                                 image_path,
                                 chip_dir,
                                 window_size,
@@ -205,7 +205,7 @@ def main(
             with ThreadPoolExecutor(max_workers=None) as executor:
                         futures = {
                             executor.submit(
-                                chip,
+                                chip_image,
                                 image_path,
                                 chip_dir,
                                 window_size,
@@ -219,4 +219,4 @@ def main(
     return None
 
 if __name__ == "__main__":
-    main()
+    chip()

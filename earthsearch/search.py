@@ -7,7 +7,7 @@ class Results(TypedDict):
     path: str
     distance: float
 
-def main(
+def search(
         query_image: str,
         index_path: str,
         indexed_images_path: str,
@@ -56,4 +56,4 @@ def main(
     return results
 
 if __name__ == "__main__":
-    main()
+    search()
