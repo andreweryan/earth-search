@@ -3,18 +3,19 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "package_name"
-version = "0.0.1"
+name = "earthsearch"
+version = "0.1.0"
 authors = [
     { name = "Andrew Ryan", email = "andrewryan@duck.com" }
 ]
-description = "package description"
+description = "A library for efficient indexing & similarity search of satellite images."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
 
 [tool.setuptools]
-packages = ["package_name"]
+package-dir = {"" = "src"}
+packages = ["earthsearch"]
 
 [project.scripts]
-package_name = "package_name.cli:main"
+package_name = "earthsearch.cli:main"

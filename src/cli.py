@@ -1,5 +1,5 @@
 import argparse
-from .main import function
+from .core import function
 
 
 def main():

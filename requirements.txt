@@ -1,7 +1,13 @@
-matplotlib
+cv2
+GDAL
+tqdm
+torch
+faiss
 numba
 numpy
+scipy
 pandas
 Pillow
-sqlalchemy
-tqdm
+imagehash
+matplotlib
+albumentations

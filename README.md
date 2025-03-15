@@ -1,8 +1,12 @@
-# Python Repo template
+# Earth Search
+
+A library for efficient indexing & similarity search of satellite images. 
+
+Earth Search is built on top of Faiss (Facebook AI Similarity Search) with a number of feature extractors for indexing and querying satellite image embeddings. 
 
 Task List
 - [ ] Update README with installation, usage, etc.
-- [ ] Write unit tests
+- [ ] Everything else...
 - [ ] 
 - [ ] 
 - [ ] 

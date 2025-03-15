@@ -18,5 +18,4 @@ COPY repo / src/repo/
 COPY pyproject.toml /src 
 
 WORKDIR /src
-RUN pip install . 
-RUN pip install torch==1.12.1 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu113
+RUN pip install .

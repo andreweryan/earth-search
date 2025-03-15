@@ -8,7 +8,7 @@
 ; C901: SyntaxError or IndentationError
 ; F403: ‘from module import *’ used; unable to detect undefined names
 ; F401: module imported but unused
-ignore = E203, E501, W503, E711, E712, C901, F403
+ignore = E203, E501, W503, E711, E712, C901, F401, F403
 max-line-length = 89
 max-complexity = 18
 select = B,C,E,F,W,T4,B9
