@@ -9,16 +9,62 @@ Earth Search is built on top of Faiss (Facebook AI Similarity Search) with a num
 </p>
 
 Task List
-- [ ] Update README with installation, usage, etc.
-- [ ] Everything else...
-- [ ] Extract location from query image filenames, export to geospatial file formats
-- [ ] Integrate other feature extraction methods
-- [ ] 
+- [ ] Extract location from knn image filenames, export to geospatial file formats
+- [ ] Integrate other feature extraction methods, e.g., SIFT, hashing, etc., have these implemented locally but requires refactoring 
+- [ ] Integrate other faiss index types, IVFFlat, etc. 
+- [ ] Abstract to support other vector database/search solutions, e.g., pgvector, chromadb, pinecone, etc. 
+- [ ] Allow user to extend index with new image chips
 
 ## Installation:
 
+Clone the repo and run `pip install . `
+
+## Currently Supported Features:
+
+Images for chipping:
+* Any geospatial image format, e.g., TIF, NITF, etc.
+
+Images for indexing:
+* Any image format, e.g., TIF, PNG, JPEG, etc.
+* If you have a directory of chips, you can index them
+
+Models:
+* ResNet-18: `resnet18`
+* ResNet-34: `resnet34`
+* ResNet-50: `resnet50`
+* ResNet-101: `resnet101`
+* ResNet-152: `resnet152`
+* DINOv2 ViT-S/14 distilled: `dinov2_vits14`
+* DINOv2 ViT-S/14 distilled with Registers: `dinov2_vits14_reg`
+* DINOv2 ViT-B/14 distilled: `dinov2_vitb14`
+* DINOv2 ViT-B/14 distilled with Registers: `dinov2_vitb14_reg`
+* DINOv2 ViT-L/14 distilled: `dinov2_vitl14`
+* DINOv2 ViT-L/14 distilled with Registers: `dinov2_vitl14_reg`
+* DINOv2 ViT-g/14: `dinov2_vitg14`
+* DINOv2 ViT-g/14 with Registers: `dinov2_vitg14_reg`
+
+Faiss Indices:
+* L2
+
+### Planned Features:
+Models/Algorithms:
+* SIFT (Scale-Invariant Feature Transform)
+* ORB (Oriented FAST and Rotated BRIEF)
+* Hashing algorithms
+
+Faiss Indices:
+* IndexIVFFlat
+* IndexHNSWFlat
+* IndexLSH
+* IndexBinaryFlat
+* IndexBinaryIVF
+
+
 
 ## Usage:
+
+`chip` takes a directory of satellite imagery scenes and creates a directory of chips for indexing. 
+If you already have a directory of chips, you can skip this step and run `index` and `search`. 
 
 Package import usage:
 ```python

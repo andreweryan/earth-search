@@ -306,32 +306,47 @@ class ImageSimilaritySearch:
     def save(
             self,
             index_path: str,
-            image_paths_file: str
+            indexed_images_path: str
             ) -> None:
         """Save the vector database index and image paths."""
         # Save the FAISS index
         self.db.save_index(index_path)
         
         # Save the image paths to file
-        with open(image_paths_file, "w") as f:
+        with open(indexed_images_path, "w") as f:
             for path in self.db.image_paths:
                 f.write(f"{path}\n")
     
-        return image_paths_file     
+        return indexed_images_path     
     
     def load(
             self,
             index_path: str,
-            image_paths_file: str
+            indexed_images_path: str
             ) -> None:
         """Load the vector database index."""
         self.db.load_index(index_path)
         
         # Load image paths
-        with open(image_paths_file, "r") as f:
+        with open(indexed_images_path, "r") as f:
             self.db.image_paths = [line.strip() for line in f.readlines()]
 
-def show_search_results(src, results, max_display=3, src_path=None):
+def show_search_results(
+        src: Union[str, np.ndarray],
+        results: List[dict],
+        max_display: int = 3,
+        ):
+    """
+    Display search results
+
+    Args:
+        src: Path to query image or np.ndarray
+        results (List[dict]): Results list containing dicts of nearest neighbor results
+        max_display (int): Max number of results to display, typically just top_k
+    
+    Return:
+        None
+    """
     if isinstance(src, str):
         query_image = Image.open(src)
     else:
@@ -339,45 +354,19 @@ def show_search_results(src, results, max_display=3, src_path=None):
     
     num_results = min(max_display, len(results))
 
-    if src_path:
-        # this is for if you use a transformed image, you can pass the path of the original
-        # image to plot both the original and transformed images
-        original_image = Image.open(src_path)
+    fig, axes = plt.subplots(1, num_results + 1, figsize=(4 * (num_results + 1), 4))
 
-        fig, axes = plt.subplots(1, num_results + 2, figsize=(4 * (num_results + 1), 4))
+    # Display query image
+    axes[0].imshow(query_image)
+    axes[0].set_title("Query Image")
+    axes[0].axis('off')
 
-        # Display original image
-        axes[0].imshow(original_image)
-        axes[0].set_title("Query Image")
-        axes[0].axis('off')
-
-        # Display query image
-        axes[1].imshow(query_image)
-        axes[1].set_title("Transformed\nQuery Image")
-        axes[1].axis('off')
-
-        # Display results
-        for i in range(num_results):
-            result_path, distance = results[i]["path"], results[i]["distance"]
-            result_image = Image.open(result_path)
-            axes[i + 2].imshow(result_image)
-            axes[i + 2].set_title(f"Distance: {int(distance)}")
-            axes[i + 2].axis('off')
-
-    else:
-        fig, axes = plt.subplots(1, num_results + 1, figsize=(4 * (num_results + 1), 4))
-
-        # Display query image
-        axes[0].imshow(query_image)
-        axes[0].set_title("Query Image")
-        axes[0].axis('off')
-
-        # Display results
-        for i in range(num_results):
-            result_path, distance = results[i]["path"], results[i]["distance"]
-            result_image = Image.open(result_path)
-            axes[i + 1].imshow(result_image)
-            axes[i + 1].set_title(f"Distance: {int(distance)}")
-            axes[i + 1].axis('off')
+    # Display results
+    for i in range(num_results):
+        result_path, distance = results[i]["path"], results[i]["distance"]
+        result_image = Image.open(result_path)
+        axes[i + 1].imshow(result_image)
+        axes[i + 1].set_title(f"Distance: {int(distance)}")
+        axes[i + 1].axis('off')
     
     plt.show()

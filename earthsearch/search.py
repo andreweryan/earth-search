@@ -14,8 +14,8 @@ def search(
         index_type: str = "L2",
         top_k: int = 10,
         model_type: Literal["resnet18", "resnet34", "resnet50", "resnet101", "resnet152", 
-                                "dinov2_vits14", "dinov2_vits14_reg", "dinov2_vitb14", "dinov2_vitl14", 
-                                "dinov2_vitg14"] = "dinov2_vits14_reg",
+                                "dinov2_vits14", "dinov2_vits14_reg", "dinov2_vitb14", "dinov2_vitb14_reg", 
+                                "dinov2_vitl14", "dinov2_vitl14_reg", "dinov2_vitg14", "dinov2_vitg14_reg"] = "dinov2_vits14_reg",
         device: Literal["cuda", "mps", "cpu"] = "cuda"
         ) -> List[Results]:
     """
