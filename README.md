@@ -11,8 +11,8 @@ Earth Search is built on top of Faiss (Facebook AI Similarity Search) with a num
 Task List
 - [ ] Update README with installation, usage, etc.
 - [ ] Everything else...
-- [ ] 
-- [ ] 
+- [ ] Extract location from query image filenames, export to geospatial file formats
+- [ ] Integrate other feature extraction methods
 - [ ] 
 
 ## Installation:

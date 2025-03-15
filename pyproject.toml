@@ -14,8 +14,7 @@ requires-python = ">=3.12"
 dependencies = []
 
 [tool.setuptools]
-package-dir = {"" = "earthsearch"}
 packages = ["earthsearch"]
 
 [project.scripts]
-package_name = "earthsearch.cli:main"
+earthsearch = "earthsearch.cli:main"
