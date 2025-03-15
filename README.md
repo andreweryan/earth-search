@@ -19,7 +19,7 @@ Task List
 
 Clone the repo and run `pip install . `
 
-## Currently Supported Features:
+## Supported Features:
 
 Images for chipping:
 * Any geospatial image format, e.g., TIF, NITF, etc.
