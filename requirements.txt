@@ -2,13 +2,16 @@ opencv-python
 gdal==3.10.1
 tqdm
 torch
-faiss-cpu
 numba
 numpy
 scipy
 pandas
 pillow
 pytest
+affine
+shapely
 imagehash
+faiss-cpu
 matplotlib
+torchvision
 albumentations
