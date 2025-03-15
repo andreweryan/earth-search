@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "package_name"
+version = "0.0.1"
+authors = [
+    { name = "Andrew Ryan", email = "andrewryan@duck.com" }
+]
+description = "package description"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.setuptools]
+packages = ["package_name"]
+
+[project.scripts]
+package_name = "package_name.cli:main"

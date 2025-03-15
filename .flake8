@@ -1,0 +1,14 @@
+[flake8]
+; see more error codes: https://pycodestyle.pycqa.org/en/latest/intro.html#error-codes | https://flake8.pycqa.org/en/latest/user/error-codes.html
+; E203: whitespace before ‘,’, ‘;’, or ‘:’
+; E501: line too long (82 > 79 characters)
+; W503: line break before binary operator
+; E711: comparison to None should be ‘if cond is None:’
+; E712: comparison to True should be ‘if cond is True:’ or ‘if cond:’
+; C901: SyntaxError or IndentationError
+; F403: ‘from module import *’ used; unable to detect undefined names
+; F401: module imported but unused
+ignore = E203, E501, W503, E711, E712, C901, F403
+max-line-length = 89
+max-complexity = 18
+select = B,C,E,F,W,T4,B9
