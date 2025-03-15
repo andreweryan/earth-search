@@ -9,11 +9,17 @@ authors = [
     { name = "Andrew Ryan", email = "andrewryan@duck.com" }
 ]
 description = "A library for efficient indexing & similarity search of satellite images."
+keywords = ["geospatial", "similarity", "indexing", "satellite imagery"]
 readme = "README.md"
 license = "MIT"
 license-files = ["LICEN[CS]E*"]
 requires-python = ">=3.12"
 dependencies = {file = ["requirements.txt"]}
+
+[project.urls]
+"Homepage" = "https://github.com/andreweryan/earthsearch"
+"Bug Tracker" = "https://github.com/andreweryan/earthsearch/issues"
+"Source Code" = "https://github.com/andreweryan/earthsearch"
 
 [tool.setuptools]
 packages = ["earthsearch"]
