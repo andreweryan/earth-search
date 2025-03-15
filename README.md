@@ -22,8 +22,34 @@ Task List
 
 Package import usage:
 ```python
-from package.main import test_function
-test_function()
+from earthsearch.chip import chip
+from earthsearch.index import index
+from earthsearch.search import search
+from earthsearch.core import show_search_results
+
+image_dir = "directory/path/to/satellite/image/scenes"
+chip_dir = "directory/path/to/write/image/chips"
+window_size = 512
+stride = 0.0
+valid_exts = ["tif"]
+
+index_path = "path/to/save/index/to"
+indexed_images_path = "path/to/write/indexed/image/paths/to"
+index_type = "L2"
+model_type = "dinov2_vits14_reg"
+device = "cuda" # or "mps", "cpu
+batch_size = 32
+
+query_image = "path/to/query/for/top_k/similar/images", 
+top_k = 10
+
+chip(image_dir, chip_dir, window_size, stride, valid_exts, multiprocess=True)
+index(chip_dir, index_path, indexed_images_path, index_type, model_type, device, batch_size, overwrite_index=False)
+results = search(query_image, index_path, indexed_images_path, index_type, top_k, model_type, device)
+
+for idx, result in enumerate(results):
+    print(f"{idx + 1}: {result["path"]} - Distance: {result["distance"]}")
+show_search_results(query_image, results, max_display=top_k)
 
 ```
 

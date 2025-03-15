@@ -18,7 +18,7 @@ def index(
     """
     
     Args:
-        image_dir (str): Path to directory of images to index
+        image_dir (str): Path to directory of chipped images to index
         index_path (str): Path to saved index 
         indexed_images_path (str): Path to file containing indexed image paths
         valid_exts (List[str]): Image extensions to filter for

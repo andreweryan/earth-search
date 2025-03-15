@@ -11,14 +11,14 @@ def main():
     index_parser = subparsers.add_parser("index")
     search_parser= subparsers.add_parser("search")
 
-    chip_parser.add_argument("--image_dir", type=str, required=True, help="Directory path to images")
+    chip_parser.add_argument("--image_dir", type=str, required=True, help="Directory path of images to chip")
     chip_parser.add_argument("--chip_dir", type=str, required=True, help="Directory path to write chips to")
     chip_parser.add_argument("--window_size", type=int, required=False, default=512, help="Size of sliding window, e.g., 512")
     chip_parser.add_argument("--stride", type=float, required=False, default=0.0, help="Amount of overlap in x, y direction, e.g., 0.2")
     chip_parser.add_argument("--valid_exts", nargs="*", required=False, help="Image extensions to filter for")
     chip_parser.add_argument("--multiprocess", action="store_true", help="Use multiprocessing vs multithreading")
 
-    index_parser.add_argument("--image_dir", type=str, required=True, help="Path to directory of images to index")
+    index_parser.add_argument("--image_dir", type=str, required=True, help="Directory path of chipped images to index")
     index_parser.add_argument("--index_path", type=str, required=True, help="Path to save index")
     index_parser.add_argument("--indexed_images_path", type=str, required=True, help="Path to save file containing indexed image paths")
     index_parser.add_argument("--index_type", type=str, required=True, default="L2", help="Type of index to use (currently only using L2)")
