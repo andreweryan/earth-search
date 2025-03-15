@@ -4,16 +4,17 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "earthsearch"
-version = "0.1.0"
+version = "0.1.2"
 authors = [
     { name = "Andrew Ryan", email = "andrewryan@duck.com" }
 ]
 description = "A library for efficient indexing & similarity search of satellite images."
 keywords = ["geospatial", "similarity", "indexing", "satellite imagery"]
-readme = "README.md"
-license = "MIT"
-license-files = ["LICEN[CS]E*"]
+readme = "README.pypi.md"
+license = {text = "MIT"}
 requires-python = ">=3.12"
+
+[tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}
 
 [project.urls]

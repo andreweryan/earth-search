@@ -4,21 +4,9 @@ A library for efficient indexing & similarity search of satellite images.
 
 Earth Search is built on top of Faiss (Facebook AI Similarity Search) with a number of feature extractors for indexing and querying satellite image embeddings. 
 
-<p align="center">
-  <img src="assets/queries.png">
-</p>
-
-Task List
-- [ ] Extract location from knn image filenames, export to geospatial file formats
-- [ ] Integrate other feature extraction methods, e.g., SIFT, hashing, etc., have these implemented locally but requires refactoring 
-- [ ] Integrate other faiss index types, IVFFlat, etc. 
-- [ ] Abstract to support other vector database/search solutions, e.g., pgvector, chromadb, pinecone, etc. 
-- [ ] Allow user to extend index with new image chips
-
 ## Installation:
 
-From pip: `pip install earthsearch`
-From source: clone the repo and run `pip install . `
+`pip install earthsearch`
 
 ## Supported Features:
 
@@ -59,8 +47,6 @@ Faiss Indices:
 * IndexLSH
 * IndexBinaryFlat
 * IndexBinaryIVF
-
-
 
 ## Usage:
 
