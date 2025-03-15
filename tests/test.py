@@ -1,2 +1,1 @@
-import pytest
-from package import function
+from earthsearch import function
