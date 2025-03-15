@@ -79,8 +79,8 @@ window_size = 512
 stride = 0.0
 valid_exts = ["tif"]
 
-index_path = "path/to/save/index/to"
-indexed_images_path = "path/to/write/indexed/image/paths/to"
+index_path = "path/to/save/index/to.bin"
+indexed_images_path = "path/to/write/indexed/image/paths/to.txt"
 index_type = "L2"
 model_type = "dinov2_vits14_reg"
 device = "cuda" # or "mps", "cpu
