@@ -1,6 +1,10 @@
+import os
 import sys
+import warnings
 import argparse
 from . import chip, index, search
+
+warnings.simplefilter("once", UserWarning)
 
 
 def main():
@@ -138,6 +142,12 @@ def main():
     search_parser.set_defaults(func=search.search)
 
     args = parser.parse_args()
+    if os.path.exists(args.chip_dir):
+        warnings.warn("Chip directory exists")
+        print(
+            "Remove it if you would like a fresh directory."
+            "Otherwise, you may have images in your index that you don't not want."
+        )
 
     if args.command:
         func_args = {

@@ -1,7 +1,5 @@
 import os
 import cv2
-import glob
-import shutil
 import numpy as np
 from numba import jit
 from tqdm import tqdm
@@ -197,8 +195,6 @@ def chip(
     """
     if not os.path.exists(chip_dir):
         os.makedirs(chip_dir, exist_ok=True)
-    else:
-        print("Chip directory exists, remove it if you would like a fresh directory.")
 
     if not valid_exts:
         valid_exts = ["tif", "nitf", "ntf"]
