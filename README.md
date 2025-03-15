@@ -12,6 +12,7 @@ Task List
 - [ ] Extract location from knn image filenames, export to geospatial file formats
 - [ ] Integrate other feature extraction methods, e.g., SIFT, hashing, etc., have these implemented locally but requires refactoring 
 - [ ] Integrate other faiss index types, IVFFlat, etc. 
+- [ ] Chip/index without writing chips to disk (possibly requires some other flat file to sit next to the index)
 - [ ] Abstract to support other vector database/search solutions, e.g., pgvector, chromadb, pinecone, etc. 
 - [ ] Allow user to extend index with new image chips
 
