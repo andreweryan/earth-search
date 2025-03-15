@@ -18,10 +18,13 @@ Task List
 ## Installation:
 
 From pip:
+
 `pip install earthsearch`
 
 From source:
+
 clone the repo
+
 `pip install . `
 
 ## Supported Features:
