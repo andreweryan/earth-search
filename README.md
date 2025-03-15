@@ -4,6 +4,10 @@ A library for efficient indexing & similarity search of satellite images.
 
 Earth Search is built on top of Faiss (Facebook AI Similarity Search) with a number of feature extractors for indexing and querying satellite image embeddings. 
 
+<p align="center">
+  <img src="assets/queries.png">
+</p>
+
 Task List
 - [ ] Update README with installation, usage, etc.
 - [ ] Everything else...
