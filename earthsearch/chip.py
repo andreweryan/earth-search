@@ -185,7 +185,7 @@ def chip(
     Args:
         image_dir (str): Directory path to images
         chip_dir (str): Directory path to write chips to
-        window_size (int): Size of sliding window, e.g., 256)
+        window_size (int): Size of sliding window, e.g., 256
         stride (float): Amount of overlap in x, y direction, e.g., 0.2 for 20% overlap
         valid_exts (List[str]): Image extensions to filter for
         multiprocess (bool): Use multiprocessing vs multithreading
