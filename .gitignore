@@ -25,3 +25,4 @@ MANIFEST
 .DS_Store
 */.DS_Store
 package.sh
+README.pypi.md
